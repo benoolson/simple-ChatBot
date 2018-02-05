@@ -63,20 +63,15 @@ function bot(data,socket,questionNum) {
   else if (questionNum == 2) {
   answer= ' Cool! I have never been to ' + input+'.';
   waitTime =2000;
-  question = 'Do you like Raspberry Pie?';			    	// load next question
-  }
-  else if (questionNum == 3) {
-  answer= ' Me too! Raspberry Pi is the best';
-  waitTime =2000;
   question = 'Whats your favorite Color?';			    	// load next question
   }
-  else if (questionNum == 4) {
+  else if (questionNum == 3) {
   answer= 'Ok, ' + input+' it is.';
   socket.emit('changeBG',input.toLowerCase());
   waitTime = 2000;
   question = 'Can you still read the font?';			    	// load next question
   }
-  else if (questionNum == 5) {
+  else if (questionNum == 4) {
     if(input.toLowerCase()==='yes'|| input===1){
       answer = 'Perfect!';
       waitTime =2000;
