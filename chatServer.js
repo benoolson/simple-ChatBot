@@ -30,7 +30,7 @@ io.on('connect', function(socket) {
   var questionNum = 0; // keep count of question, used for IF condition.
   socket.on('loaded', function(){// we wait until the client has loaded and contacted us that it is ready to go.
 
-  socket.emit('answer',"Hey, Hello I am Favorite Pie - a simple chat bot example."); //We start with the introduction;
+  socket.emit('answer',"Hey, Hello I am \"___*-\" a simple chat bot example."); //We start with the introduction;
   setTimeout(timedQuestion, 2500, socket,"What is your Name?"); // Wait a moment and respond with a question.
 
 });
@@ -53,30 +53,30 @@ function bot(data,socket,questionNum) {
   if (questionNum == 0) {
   answer= 'Hello ' + input + ' :-)';// output response
   waitTime =2000;
-  question = 'What is your favorite type of pie?'; // added question for pie
+  question = 'How old are you?';			    	// load next question
   }
   else if (questionNum == 1) {
-  answer= 'Really ' + input + ' pie? ';// output response
+  answer= 'Really ' + input + ' Years old? So that means you where born in: ' + (2018-parseInt(input));// output response
   waitTime =2000;
-  if(input.toLowerCase()==='raspberry'|| input===1){
-    answer = 'Im a raspberry'
-  if(input.toLowerCase()=!'raspberry'|| input===0){
-    answer = 'I prefer raspberry, for obvious reasons'
-
   question = 'Where do you live?';			    	// load next question
   }
   else if (questionNum == 2) {
   answer= ' Cool! I have never been to ' + input+'.';
   waitTime =2000;
-  question = 'Whats your favorite Color?';			    	// load next question
+  question = 'Do you like Raspberry Pie?';			    	// load next question
   }
   else if (questionNum == 3) {
+  answer= ' Me too! Raspberry Pi is the best';
+  waitTime =2000;
+  question = 'Whats your favorite Color?';			    	// load next question
+  }
+  else if (questionNum == 4) {
   answer= 'Ok, ' + input+' it is.';
   socket.emit('changeBG',input.toLowerCase());
   waitTime = 2000;
   question = 'Can you still read the font?';			    	// load next question
   }
-  else if (questionNum == 4) {
+  else if (questionNum == 5) {
     if(input.toLowerCase()==='yes'|| input===1){
       answer = 'Perfect!';
       waitTime =2000;
